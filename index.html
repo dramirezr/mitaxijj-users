@@ -14,6 +14,32 @@
   
     <link rel="stylesheet" href="jquery.mobile-1.3.2.min.css" />
 
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+
+<script type="text/javascript" charset="utf-8"> 
+
+	
+	var model;
+	var platform;
+	var version;
+	var uuid;
+
+	function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false); 
+    }
+
+	function onDeviceReady() { 
+		model		=	device.model;
+		platform	=	device.platform;
+		version		=	device.version;
+		uuid		=	device.uuid;
+	}
+
+</script> 
+
 <style>
 .ui-bar-f {
     font-weight: normal;
@@ -59,25 +85,6 @@
 
 </style>
 
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
-
-<script type="text/javascript" charset="utf-8"> 
-
-	document.addEventListener("deviceready", onDeviceReady, false); 
-
-	var model;
-	var platform;
-	var version;
-	var uuid;
-
-	function onDeviceReady() { 
-		model		=	device.model;
-		platform	=	device.platform;
-		version		=	device.version;
-		uuid		=	device.uuid;
-	}
-
-</script> 
 
 <script language="JavaScript">
 
@@ -98,11 +105,11 @@
           window.location.assign("http://app.mitaxijj.com.ec/"+lang+"/dashboard/index/?"+params);
         }else{
           $.mobile.loading("hide");
-          alert('No dispone de conexion a internet o el servidor no responde, por favor verifique su conexion y vuelva a intentarlo.');
+          alert('No dispone de conexion a internet, por favor verifique su conexion y vuelva a intentarlo.');
         }
      }).fail(function(jqXHR, textStatus, errorThrown){
           $.mobile.loading("hide");
-          alert('No dispone de conexion a internet o el servidor no responde, por favor verifique su conexion y vuelva a intentarlo.');
+          alert('No dispone de conexion a internet, por favor verifique su conexion y vuelva a intentarlo.');
 
       }); 
     
@@ -114,7 +121,7 @@
 <title>Mi Taxi JJ</title>
 </head>   
 
-<body>
+<body onload="onLoad()">
 
 <div data-role="page" id="principal" data-theme="f">
   <div data-theme="f" data-role="header" align="center">
