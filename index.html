@@ -14,14 +14,12 @@
   
     <link rel="stylesheet" href="jquery.mobile-1.3.2.min.css" />
 
-	<script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
-
-
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script> 
 
 <script type="text/javascript" charset="utf-8"> 
 
 	
+
 	var model;
 	var platform;
 	var version;
@@ -39,6 +37,7 @@
 	}
 
 </script> 
+
 
 <style>
 .ui-bar-f {
@@ -85,7 +84,6 @@
 
 </style>
 
-
 <script language="JavaScript">
 
   function connect(lang) {
@@ -99,8 +97,8 @@
       jsonpCallback: 'jsonpCallback',
       data : {cachehora : (new Date()).getTime()},
       }).done(function(response){
-	    params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
-        if(response.state === 'ok'){
+        params = 'uuid='+uuid+'&model='+model+'&platform='+platform+'&version='+version;
+		if(response.state === 'ok'){
           $.mobile.loading("hide");
           window.location.assign("http://app.mitaxijj.com.ec/"+lang+"/dashboard/index/?"+params);
         }else{
@@ -114,22 +112,26 @@
       }); 
     
   }
-  
+
+ 
 </script>
 
 
 <title>Mi Taxi JJ</title>
 </head>   
 
-<body onload="onLoad()">
+ <body onload="onLoad()">
+		
 
 <div data-role="page" id="principal" data-theme="f">
   <div data-theme="f" data-role="header" align="center">
-    <div></div>
+    <div>
+		
+	</div>
   </div>
  
   <br><br>
-  <div data-role="article">
+ <div data-role="article">
     <div data-role="section" align="center">
       <img src="taxi-logo.png" />
     </div>
